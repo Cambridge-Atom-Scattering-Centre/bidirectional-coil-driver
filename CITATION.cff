@@ -1,0 +1,17 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: bidirectional-coil-driver
+message: >-
+  If you use this dataset, please cite it using the metadata
+  from this file.
+type: dataset
+authors:
+  - given-names: Boyao
+    family-names: Liu
+    email: bl476@cam.ac.uk
+  - given-names: William
+    family-names: Allison
+repository-code: >-
+  https://github.com/Cambridge-Atom-Scattering-Centre/bidirectional-coil-driver
