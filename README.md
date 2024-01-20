@@ -4,7 +4,7 @@ This repository contains the files necessary to build the bidirectional coil dri
 
 ## Building the printed circuit boards
 
-The two Gerber files contain information about the PCB of the coil driver itself and another board that can provide interface between the Raspberry Pi Pico and the coil driver. The BOM files have the bill of materials. The two pdf files show the schematics of the circuits.
+The two zipped Gerber files contain information about the PCB of the coil driver itself and another board that can provide interface between the Raspberry Pi Pico and the coil driver. The BOM files have the bill of materials. The two pdf files show the schematics of the circuits.
 
 The Gerber files and the BOM files can be given to a commercial PCB fabrication company like JLCPCB for them to produce it.
 
@@ -26,4 +26,8 @@ Copy set_curret.py and main.py to the directory of the Pi Pico.
 
 set_current.py is a function that send a number via SPI to the driver board and set the current. Note that when setting the current, you need to have a load connected, otherwise the driver board might break.
 
-main.py is a file that run automatically after the Pi Pico is powered, because it is called "main". It receives signal via RS232 (the three ports on the Pico board). You can connect a PC to it via serial port.
+main.py is a file that run automatically after the Pi Pico is powered, because it is called "main". It receives signal via RS232 (the three ports on the Pico board). You can connect a PC to it via serial port. talk_to_pico.m is a MATLAB file that can be used on a PC to set the current.
+
+## Characterisation of the coil driver
+
+characterisation_20231130.mat is a file that contains the information about the characterisation of the power supply. It contains a variable called msg, which is the numbers sent to the digital to analogue converter on the driver board. Another viriable, I, stores the measured current.
