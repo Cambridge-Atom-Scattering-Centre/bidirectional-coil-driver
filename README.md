@@ -2,16 +2,28 @@
 
 This repository contains the files necessary to build the bidirectional coil driver, which is used to drive the phase coil and spin rotator coil in the Cambridge spin echo spectrometer.
 
-## building the printed circuit boards
+## Building the printed circuit boards
 
 The two Gerber files contain information about the PCB of the coil driver itself and another board that can provide interface between the Raspberry Pi Pico and the coil driver. The BOM files have the bill of materials. The two pdf files show the schematics of the circuits.
 
 The Gerber files and the BOM files can be given to a commercial PCB fabrication company like JLCPCB for them to produce it.
 
-## connecting the boards
+A Raspberry Pi Pico microcontroller is needed to control the current.
+
+## Connecting the boards
 
 The two PCBs needs to be powered by a 5V power supply (the power inputs are marked as 0V and 5V). A temperary choice is to use a battery which supplies roughly 5V; a better and proper solution is to use a USB cable.
 
 S2 on the pico board needs to be connected to the SPI interface of the driver board, as shown in the picure.
 
 The load should be connected to the Iout+ and Iout- ports on the coil driver board.
+
+## Controlling the current
+
+After everything is connected in the same way as the picutre, you can program the Raspberry Pi Pico. A popular application to do that is Thonny.
+
+Copy set_curret.py and main.py to the directory of the Pi Pico.
+
+set_current.py is a function that send a number via SPI to the driver board and set the current. Note that when setting the current, you need to have a load connected, otherwise the driver board might break.
+
+main.py is a file that run automatically after the Pi Pico is powered, because it is called "main". It receives signal via RS232 (the three ports on the Pico board). You can connect a PC to it via serial port.
