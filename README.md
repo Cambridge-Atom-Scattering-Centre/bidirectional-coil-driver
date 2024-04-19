@@ -31,3 +31,5 @@ main.py is a file that run automatically after the Pi Pico is powered, because i
 ## Characterisation of the coil driver
 
 characterisation_20231130.mat is a file that contains the information about the characterisation of the power supply. It contains a variable called msg, which is the numbers sent to the digital to analogue converter on the driver board. Another viriable, I, stores the measured current.
+
+Keithley_Allanvar.mat records the current of the power supply every 0.1 seconds for about 12.5 hours, when the output of the DAC was set to 0. The results can be used for calculating the Allan variance.
