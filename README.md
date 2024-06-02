@@ -75,14 +75,14 @@ The Simulink model is shown below.  There are 2 independent noise sources: one r
 
 Results for various combinations of the feedback capacitor (C1) and the noise filtering capacitor (C2) are given in the table below.
 
-|C1 / pF|	C2 / pF|	p-p noise current, $σ_I$  / microamp|
-| ----- | -------| ------------------------------------ |
-|470    |	0      |	60                                  |
-|470    |	470	   |  40                                  |
-|4700   |	4700	 |  30                                  |
-|4700   |	47000	 |  30                                  |
+| C1/pF |	C2/pF |	p-p noise current, $σ_I$ / microamp|
+| ----- | ------| -----------------------------------|
+|470    |	0     |	 60                                |
+|470    |	470	  |  40                                |
+|4700   |	4700	|  30                                |
+|4700   |	47000	|  30                                |
 
-These are crude measurements of peak-to-peak noise (eyeball from the Simulink scope). They correspond to at least $6\sigma$, possibly more, where $sigma$ is the rms noise. So, using $C_1= C_2=$4700 pF will give an rms noise of about 5 microamps. Where the noise is dominated by the AD8607 amplifier. The only way to improve on this is to use an amplifier with lower noise.
+These are crude measurements of peak-to-peak noise (eyeball from the Simulink scope). They correspond to at least $6\sigma$, possibly more, where $\sigma$ is the rms noise. So, using $C_1=C_2=$ 4700 pF will give an rms noise of about 5 microamps. Where the noise is dominated by the AD8607 amplifier. The only way to improve on this is to use an amplifier with lower noise.
 
 For information, the step response and Bode plots for the highlighted  arrangement are…
 
