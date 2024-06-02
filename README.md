@@ -81,3 +81,10 @@ Results for various combinations of the feedback capacitor (C1) and the noise fi
 |470    |	470	   |  40                                  |
 |4700   |	4700	 |  30                                  |
 |4700   |	47000	 |  30                                  |
+
+These are crude measurements of peak-to-peak noise (eyeball from the Simulink scope). They correspond to at least $6\sigma$, possibly more, where $sigma$ is the rms noise. So, using $C_1= C_2=$4700 pF will give an rms noise of about 5 microamps. Where the noise is dominated by the AD8607 amplifier. The only way to improve on this is to use an amplifier with lower noise.
+
+For information, the step response and Bode plots for the highlighted  arrangement are…
+
+![image](https://github.com/Cambridge-Atom-Scattering-Centre/bidirectional-coil-driver/assets/73556464/c3e7c012-47f6-4cbe-a4ec-6a1dc8120cd9)
+
