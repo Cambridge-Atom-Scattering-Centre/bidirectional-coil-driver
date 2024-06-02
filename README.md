@@ -34,7 +34,7 @@ characterisation_20231130.mat is a file that contains the information about the 
 
 Keithley_Allanvar.mat records the current of the power supply every 0.1 seconds for about 12.5 hours, when the output of the DAC was set to 0. The results can be used for calculating the Allan variance.
 
-# Revision Notes:
+# Revision Notes
 
 ## Noise and risetime of Precision Current Source
 
@@ -59,11 +59,11 @@ Note that the major component is the voltage reference.  Note also that, in the 
 
 ## Noise reduction strategies:
 
-###(a)	Change the input configuration:  The object here is to make the bandwidth seen be the DAC output to be the same as that seen by the feedback.  Then to reduce the bandwidth of the whole circuit by increasing the capacitor, Cf.  This achieved simply, by configuring U5.2 as in the diagram below.
+### (a)	Change the input configuration:  The object here is to make the bandwidth seen be the DAC output to be the same as that seen by the feedback.  Then to reduce the bandwidth of the whole circuit by increasing the capacitor, Cf.  This achieved simply, by configuring U5.2 as in the diagram below.
 
 ![image](https://github.com/Cambridge-Atom-Scattering-Centre/bidirectional-coil-driver/assets/73556464/1d214caa-041c-4c77-87c6-3daa793b794f)
 
-###(b)	Filter the DAC signal, with respect to DACmid, a simple RC filter.
+### (b)	Filter the DAC signal, with respect to DACmid, a simple RC filter.
 
 The advantage of (a) is that the noise and risetime are controlled by a single capacitor.  Note, however, the polarity of the output is changed (since U5.2 is now an invering amplifier for the DAC signal).  The disadvantage of approach (a) is that two further high-performance resistors, Rf, Ri, are required, since the absolute scaling and drift depend on the ration Rf /Ri.  The advantage of approach (b) is its simplicity, since it only requires a single, low precision R and C. It also provides the opportunity to trade-off risetime and total noise.  We investigate (b), in some detail, below.
 
@@ -74,3 +74,10 @@ The Simulink model is shown below.  There are 2 independent noise sources: one r
 ![image](https://github.com/Cambridge-Atom-Scattering-Centre/bidirectional-coil-driver/assets/73556464/ac90d599-1dfd-4342-9928-d4a7ec0b6431)
 
 Results for various combinations of the feedback capacitor (C1) and the noise filtering capacitor (C2) are given in the table below.
+
+|C1 / pF|	C2 / pF|	p-p noise current, $σ_I$  / microamp|
+| ----- | -------| ------------------------------------ |
+|470    |	0      |	60                                  |
+|470    |	470	   |  40                                  |
+|4700   |	4700	 |  30                                  |
+|4700   |	47000	 |  30                                  |
