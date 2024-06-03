@@ -1,6 +1,6 @@
 # bidirectional-coil-driver
 
-This repository contains the files necessary to build the bidirectional coil driver, which is used to drive the phase coil and spin rotator coil in the Cambridge spin echo spectrometer.
+This repository contains the files necessary to build the bidirectional coil driver, which is used to drive the phase coil and spin rotator coil in the Cambridge spin echo spectrometer, which has been published in [Measurement Science and Technology](https://doi.org/10.1088/1361-6501/ad4dce).
 
 ## Building the printed circuit boards
 
