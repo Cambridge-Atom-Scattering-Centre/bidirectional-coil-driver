@@ -44,7 +44,7 @@ The rise time of the original circuit was ~2 s and it settles within about 20
 
 Bandwidth and rise-time can be traded to improve the rms noise current; however, that requires some modification to the schematic and printed circuit board. The notes here are the result of simcape/simulink models, which give a good representation of the original circuit and are, therefore, believed to be reliable.
 
-## Noise sources:
+## Noise sources
 
 Wideband noise taken from the respective data sheets are given in the table:
 
@@ -57,9 +57,11 @@ Wideband noise taken from the respective data sheets are given in the table:
 The total noise voltage is estimated by adding contributions, in quadrature, from MAX6071, LTC2642, giving  ~32 nV/√Hz.
 Note that the major component is the voltage reference.  Note also that, in the original configuration, the bandwidth for the DAC signal is unaffected by stabilising capacitor of U5.2, Cf, as noted above.
 
-## Noise reduction strategies:
+## Noise reduction strategies
 
-### (a)	Change the input configuration:  The object here is to make the bandwidth seen be the DAC output to be the same as that seen by the feedback.  Then to reduce the bandwidth of the whole circuit by increasing the capacitor, Cf.  This achieved simply, by configuring U5.2 as in the diagram below.
+### (a)	Change the input configuration.
+
+The object here is to make the bandwidth seen be the DAC output to be the same as that seen by the feedback.  Then to reduce the bandwidth of the whole circuit by increasing the capacitor, Cf.  This achieved simply, by configuring U5.2 as in the diagram below.
 
 ![image](https://github.com/Cambridge-Atom-Scattering-Centre/bidirectional-coil-driver/assets/73556464/1d214caa-041c-4c77-87c6-3daa793b794f)
 
