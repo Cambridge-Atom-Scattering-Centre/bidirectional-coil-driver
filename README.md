@@ -57,19 +57,11 @@ Wideband noise taken from the respective data sheets are given in the table:
 The total noise voltage is estimated by adding contributions, in quadrature, from MAX6071, LTC2642, giving  ~32 nV/√Hz.
 Note that the major component is the voltage reference.  Note also that, in the original configuration, the bandwidth for the DAC signal is unaffected by stabilising capacitor of U5.2, Cf, as noted above.
 
-## Noise reduction strategies
+## Noise reduction strategy
 
-### (a)	Change the input configuration.
+###	Filter the DAC signal, with respect to DACmid, a simple RC filter
 
-The object here is to make the bandwidth seen be the DAC output to be the same as that seen by the feedback.  Then to reduce the bandwidth of the whole circuit by increasing the capacitor, Cf.  This achieved simply, by configuring U5.2 as in the diagram below.
-
-![image](https://github.com/Cambridge-Atom-Scattering-Centre/bidirectional-coil-driver/assets/73556464/1d214caa-041c-4c77-87c6-3daa793b794f)
-
-### (b)	Filter the DAC signal, with respect to DACmid, a simple RC filter.
-
-The advantage of (a) is that the noise and risetime are controlled by a single capacitor.  Note, however, the polarity of the output is changed (since U5.2 is now an invering amplifier for the DAC signal).  The disadvantage of approach (a) is that two further high-performance resistors, Rf, Ri, are required, since the absolute scaling and drift depend on the ration Rf /Ri.  The advantage of approach (b) is its simplicity, since it only requires a single, low precision R and C. It also provides the opportunity to trade-off risetime and total noise.  We investigate (b), in some detail, below.
-
-#### Noise analysis of option (b)
+#### Noise analysis
 
 The Simulink model is shown below.  There are 2 independent noise sources: one represents the voltage ref and DAC noise ($σ_V$~32 nV/√Hz); the second is the input noise voltage of the AD8607 ($σ_V$~22 nV/√Hz).  Test show noise in the other amplifiers to be negligible, thanks to the feedback.
 
@@ -90,3 +82,4 @@ For information, the step response and Bode plots for the highlighted  arrangeme
 
 ![image](https://github.com/Cambridge-Atom-Scattering-Centre/bidirectional-coil-driver/assets/73556464/c3e7c012-47f6-4cbe-a4ec-6a1dc8120cd9)
 
+The output noise is dominated by the AD8607. A better choice for future applications would be ADA4528-2, which is a pin-for-pin replacement.
