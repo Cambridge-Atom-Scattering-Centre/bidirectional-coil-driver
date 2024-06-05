@@ -65,9 +65,9 @@ Note that the major component is the voltage reference.  Note also that, in the 
 
 The Simulink model is shown below.  There are 2 independent noise sources: one represents the voltage ref and DAC noise ($σ_V$~32 nV/√Hz); the second is the input noise voltage of the AD8607 ($σ_V$~22 nV/√Hz).  Test show noise in the other amplifiers to be negligible, thanks to the feedback.
 
-![image](https://github.com/Cambridge-Atom-Scattering-Centre/bidirectional-coil-driver/assets/73556464/ac90d599-1dfd-4342-9928-d4a7ec0b6431)
+![image](https://github.com/Cambridge-Atom-Scattering-Centre/bidirectional-coil-driver/assets/73556464/e06ca3ff-beb8-49f4-b7ed-43ce5cff6763)
 
-Results for various combinations of the feedback capacitor (C1) and the noise filtering capacitor (C2) are given in the table below.
+Results for various combinations of the feedback capacitor (C1) and the noise filtering capacitor (C2) are given in the table below. In all cases R1=R2=10k.
 
 | C1/pF |	C2/pF |	p-p noise current, $σ_I$ / microamp|
 | ----- | ------| -----------------------------------|
@@ -82,4 +82,4 @@ For information, the step response and Bode plots for the highlighted  arrangeme
 
 ![image](https://github.com/Cambridge-Atom-Scattering-Centre/bidirectional-coil-driver/assets/73556464/c3e7c012-47f6-4cbe-a4ec-6a1dc8120cd9)
 
-The output noise is dominated by the AD8607. A better choice for future applications would be ADA4528-2, which is a pin-for-pin replacement.
+The output noise is dominated by the AD8607. A better choice for future applications would be ADA4528-2, which is a pin-for-pin replacement. In addition, R2 and C2 should be added to the PCB.
